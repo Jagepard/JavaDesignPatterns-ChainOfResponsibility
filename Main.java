@@ -3,7 +3,7 @@
  * @license https://mit-license.org/ MIT
  */
 
-package Behavioral.ChainOfResponsibility;
+import Behavioral.ChainOfResponsibility.*; 
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -15,7 +15,7 @@ public class Main {
         try {
             chain.addToChain(notice);
             chain.addToChain(warning);
-            chain.addToChain(error);
+            chain.addToChain(error);            
             chain.execute(notice.getClass().getName());
             chain.execute(warning.getClass().getName());
             chain.execute(error.getClass().getName());
