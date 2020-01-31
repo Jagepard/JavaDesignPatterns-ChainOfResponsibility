@@ -1,8 +1,3 @@
-/bin/Behavioral/ChainOfResponsibility
-.project
-.settings/org.eclipse.jdt.core.prefs
-bin/.project
-bin/.settings/org.eclipse.jdt.core.prefs
-.classpath
-bin/.classpath
-/.vs
+/.idea/
+/out/
+/.vscode/
