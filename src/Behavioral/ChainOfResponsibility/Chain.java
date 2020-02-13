@@ -1,4 +1,4 @@
-/**
+/*
  * @author  : Jagepard <jagepard@yandex.ru>
  * @license https://mit-license.org/ MIT
  */
@@ -9,14 +9,14 @@ import java.util.Map;
 import java.util.LinkedHashMap;
 
 public class Chain implements ChainInterface {
-    private LinkedHashMap <String, HandlerInterface> chain = new LinkedHashMap<String, HandlerInterface>();
+    LinkedHashMap <String, HandlerInterface> chain = new LinkedHashMap<>();
 
     public void addToChain(HandlerInterface handler)
     {
         String handlerName = handler.getClass().getName();
 
         if (chain.containsKey(handlerName)) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Handler already exists");
         }
 
         chain.put(handlerName, handler);
@@ -25,7 +25,7 @@ public class Chain implements ChainInterface {
     public void execute(String handlerName)
     {
         if (this.chain.isEmpty()) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("The chain is empty");
         }
 
         if (chain.containsKey(handlerName)) {
@@ -34,12 +34,12 @@ public class Chain implements ChainInterface {
 
                 handler.execute();
                 
-                if (handler.getClass().getName() == handlerName) {
+                if (handlerName.equals(handler.getClass().getName())) {
                     return;
                 }
             }
         }
 
-        throw new IllegalArgumentException();
+        throw new IllegalArgumentException("Handler does not exist in the chain");
     }
 }
