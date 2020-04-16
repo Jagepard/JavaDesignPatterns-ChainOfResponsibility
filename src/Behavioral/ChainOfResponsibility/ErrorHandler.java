@@ -5,9 +5,5 @@
 
 package Behavioral.ChainOfResponsibility;
 
-public class ErrorHandler implements HandlerInterface {
-    public void execute()
-    {
-        System.out.printf("%s\n", this.getClass().getName());
-    }
+public class ErrorHandler extends AbstractHandler {
 }
