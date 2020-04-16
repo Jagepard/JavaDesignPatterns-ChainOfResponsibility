@@ -7,10 +7,10 @@ package Behavioral.ChainOfResponsibility;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        ChainInterface chain = new Chain();
-        HandlerInterface notice = new NoticeHandler();
+        ChainInterface chain     = new Chain();
+        HandlerInterface notice  = new NoticeHandler();
         HandlerInterface warning = new WarningHandler();
-        HandlerInterface error = new ErrorHandler();
+        HandlerInterface error   = new ErrorHandler();
 
         try {
             chain.addToChain(notice);
