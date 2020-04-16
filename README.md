@@ -4,14 +4,7 @@
 
 ## Result:
 ```
-Behavioral.ChainOfResponsibility.NoticeHandler
-```
-```
-Behavioral.ChainOfResponsibility.NoticeHandler
-Behavioral.ChainOfResponsibility.WarningHandler
-```
-```
-Behavioral.ChainOfResponsibility.NoticeHandler
-Behavioral.ChainOfResponsibility.WarningHandler
-Behavioral.ChainOfResponsibility.ErrorHandler
+Behavioral.ChainOfResponsibility.NoticeHandler has handle an error
+Behavioral.ChainOfResponsibility.WarningHandler has handle an error
+Behavioral.ChainOfResponsibility.ErrorHandler has handle an error
 ```
