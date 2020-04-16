@@ -35,6 +35,7 @@ public class Chain implements ChainInterface {
                 handler.execute();
                 
                 if (handlerName.equals(handler.getClass().getName())) {
+                    System.out.print("\n");
                     return;
                 }
             }
