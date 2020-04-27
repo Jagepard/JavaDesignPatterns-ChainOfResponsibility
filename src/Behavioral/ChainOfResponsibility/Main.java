@@ -7,15 +7,15 @@ package Behavioral.ChainOfResponsibility;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        AbstractHandler chain  = new NoticeHandler();
-        AbstractHandler warning = new WarningHandler();
-        AbstractHandler error = new ErrorHandler();
+        NoticeHandler notice   = new NoticeHandler();
+        WarningHandler warning = new WarningHandler();
+        ErrorHandler error     = new ErrorHandler();
 
         try {
-            chain.setNext(warning).setNext(error);
-            chain.execute(chain.getClass().getName());
-            chain.execute(warning.getClass().getName());
-            chain.execute(error.getClass().getName());
+            notice.setNext(warning).setNext(error);
+            notice.execute(notice.getClass().getName());
+            notice.execute(warning.getClass().getName());
+            notice.execute(error.getClass().getName());
         } catch (Exception e) {
             System.out.printf("Caught exception: %s \n", e.getLocalizedMessage());
         }
