@@ -13,9 +13,10 @@ public class Main {
 
         try {
             notice.setNext(warning).setNext(error);
-            notice.execute(notice.getClass().getName());
-            notice.execute(warning.getClass().getName());
-            notice.execute(error.getClass().getName());
+
+            System.out.println(notice.execute(notice.getClass().getName()));
+            System.out.println(notice.execute(warning.getClass().getName()));
+            System.out.println(notice.execute(error.getClass().getName()));
         } catch (Exception e) {
             System.out.printf("Caught exception: %s \n", e.getLocalizedMessage());
         }

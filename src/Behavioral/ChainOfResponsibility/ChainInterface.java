@@ -6,5 +6,5 @@
 package Behavioral.ChainOfResponsibility;
 
 public interface ChainInterface {
-    void execute(String request);
+    String execute(String request);
 }

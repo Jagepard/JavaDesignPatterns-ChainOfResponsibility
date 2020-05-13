@@ -8,17 +8,16 @@ package Behavioral.ChainOfResponsibility;
 public abstract class AbstractHandler implements ChainInterface {
     protected AbstractHandler nextHandler;
 
-    public void execute(String request) {
+    public String execute(String request) {
         if (request.equals(this.getClass().getName())) {
-            System.out.printf("%s %s\n", this.getClass().getName(), "has handle a request");
-            return;
+            return String.format("%s %s", this.getClass().getName(), "has handle a request");
         }
 
         if (nextHandler == null) {
             throw new IllegalArgumentException(request + " does not exist in the chain");
         }
 
-        nextHandler.execute(request);
+        return nextHandler.execute(request);
     }
 
     public AbstractHandler setNext(AbstractHandler nextHandler) {
