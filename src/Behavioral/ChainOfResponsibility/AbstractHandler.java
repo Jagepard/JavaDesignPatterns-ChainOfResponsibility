@@ -10,7 +10,7 @@ public abstract class AbstractHandler implements ChainInterface {
 
     public void execute(String request) {
         if (request.equals(this.getClass().getName())) {
-            System.out.printf("%s %s\n", this.getClass().getName(), "has handle an error");
+            System.out.printf("%s %s\n", this.getClass().getName(), "has handle a request");
             return;
         }
 
@@ -21,10 +21,6 @@ public abstract class AbstractHandler implements ChainInterface {
         nextHandler.execute(request);
     }
 
-    /**
-     * @param nextHandler
-     * @return
-     */
     public AbstractHandler setNext(AbstractHandler nextHandler) {
         this.nextHandler = nextHandler;
         return nextHandler;
